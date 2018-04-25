@@ -5,7 +5,8 @@
   --color-white: #FFFFFF;
   --color-lightgrey: #EAEBEC;
   --color-darkgrey: #D8D8D8;
-  --color-darkergrey: #4A4A4A;
+  --color-darkergrey: #A1A1A1;
+  --color-darkestgrey: #4A4A4A;
   --color-blue: #4A90E2;
 
   /* Defaults */
@@ -13,17 +14,15 @@
   font-size: 16px;
   font-weight: 300;
   background-color: var(--color-white);
+  color: var(--color-darkestgrey);
 }
 
-/* html {
-  font-family: 'Roboto', Arial, sans-serif;
-  font-size: 16px;
-  font-weight: 300;
-} */
-
-a {
-  color: var(--color-blue);
-}
+.color-white { color: var(--color-white) }
+.color-lightgrey { color: var(--color-lightgrey); }
+.color-darkgrey { color: var(--color-darkgrey); }
+.color-darkergrey { color: var(--color-darkergrey); }
+.color-darkestgrey { color: var(--color-darkestgrey); }
+.color-blue { color: var(--color-blue); }
 
 b {
   font-weight: 700;
@@ -42,20 +41,47 @@ b {
 header {
   display: flex;
   align-items: center;
-  border-bottom: 1px solid var(--color-darkergrey);
   box-shadow: 0px 2px 4px rgba(0,0,0,0.4);
+  background-color: var(--color-white);
 
   position: fixed;
   z-index: 5;
-  /* background-color: #FFF8E3; */
+  height: 64px;
   max-width: inherit;
   margin: 0 auto;
   left: 0;
   right: 0;
 }
 
-.header-tablet {
-  display: none;
+.header-logo {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-left: 24px;
+  font-size: 1.2rem;
+}
+
+.header-logo img {
+  height: 42px;
+}
+
+header nav {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  width: 100%;
+  margin-right: 24px;
+}
+
+header .btn {
+  color: var(--color-darkergrey);
+  margin: 8px;
+  transition: all 0.2s ease-in;
+}
+
+header .btn:hover {
+  color: var(--color-darkestgrey);
+  color: black;
 }
 
 .header-mobile {
@@ -80,63 +106,17 @@ header {
   }
 }
 
-header h1 {
-  font-family: 'League Script', cursive;
-  padding: 0.8rem 0.8rem 0.8rem 2.5rem; /* Top & btm padding provided only to account for funky text style. */
-  font-size: 4rem;
-  white-space: nowrap; /* Prevent text wrap. */
-}
-
-header nav {
-  display: flex;
-  justify-content: flex-end;
-  align-items: center;
-  width: 100%;
-  padding: 0 1.5rem;
-}
-
-header .btn {
-  background-color: #FFF8E3;
-  margin: 0 0.5rem;
-  padding: 0.5rem;
-  border: solid 1px #B64926;
-  border-radius: 0.5rem;
-  box-shadow: 0px 2px 4px darkgrey;
-
-  transition: all 0.4s ease-in;
-}
-
-header .btn:hover {
-  background-color: #FFB03B;
-}
-
-header .facebook {
-  background-color: rgba(59, 89, 152, 0.2)
-}
-
-header .facebook:hover {
-  background-color: rgba(59, 89, 152, 0.5)
-}
-
-header .instagram {
-  background-color: rgba(233, 89, 80, 0.2)
-}
-
-header .instagram:hover {
-  background-color: rgba(233, 89, 80, 0.5)
-}
-
 /* Main Content */
 
-.main-content {
-  padding: 1rem;
-  padding-top: 7rem; /* To account for fixed header. */
+.main-container {
+  padding-top: 4.5rem; /* To account for fixed header. */
+  padding-bottom: 0.5rem;
   display: flex;
   flex-direction: column;
-  align-items: center;
+  /* align-items: center; */
 }
 
-.main-content .image, .video {
+.main-container .image, .video {
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -161,6 +141,64 @@ header .instagram:hover {
   text-align: center;
 }
 
+/* Main box 1 */
+.main-box-1 {
+  background-color: var(--color-darkgrey);
+  padding: 32px 0 32px 24px;
+  display: flex;
+  align-items: center;
+}
+
+.main-box-1 img {
+  width: 60%;
+  margin-right: 24px;
+}
+
+.main-box-1 .sub-box-1 {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 12rem;
+  width: 30%;
+}
+
+.sub-box-1 h1 {
+  font-size: 2rem;
+  font-weight: 700;
+  line-height: 1.2;
+}
+
+.sub-box-1 h2 {
+  font-weight: 700;
+  line-height: 1.5;
+}
+
+.sub-box-1 .btn {
+  display: flex;
+  justify-content: center;
+  color: var(--color-white);
+  background-color: var(--color-darkestgrey);
+  padding: 8px;
+}
+
+/* Main box 2 */
+.main-box-2 {
+  background-color: var(--color-white);
+  padding: 32px 0 32px 24px;
+}
+
+/* Main box 3 */
+.main-box-3 {
+ background-color: var(--color-lightgrey);
+ padding: 32px 72px;
+}
+
+/* Main box 4 */
+.main-box-4 {
+  background-color: var(--color-white);
+  padding: 32px 0 32px 24px;
+}
+
 /* Footer */
 
 footer {
@@ -170,6 +208,5 @@ footer {
   height: 3rem;
   font-size: 0.8rem;
 
-  border-top: 2px solid #782800;
-  box-shadow: 0px -2px 4px darkgrey;
+  box-shadow: 0px -2px 4px rgba(0,0,0,0.4);
 }

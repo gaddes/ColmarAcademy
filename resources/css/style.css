@@ -1,0 +1,175 @@
+/* Colours, Fonts, etc. */
+
+:root {
+  /* Variables */
+  --color-white: #FFFFFF;
+  --color-lightgrey: #EAEBEC;
+  --color-darkgrey: #D8D8D8;
+  --color-darkergrey: #4A4A4A;
+  --color-blue: #4A90E2;
+
+  /* Defaults */
+  font-family: 'Helvetica', Arial, sans-serif;
+  font-size: 16px;
+  font-weight: 300;
+  background-color: var(--color-white);
+}
+
+/* html {
+  font-family: 'Roboto', Arial, sans-serif;
+  font-size: 16px;
+  font-weight: 300;
+} */
+
+a {
+  color: var(--color-blue);
+}
+
+b {
+  font-weight: 700;
+}
+
+/* Background Colours etc. */
+
+.container {
+  max-width: 960px;
+  margin: 0 auto;
+  background-color: var(--color-white);
+}
+
+/* Header */
+
+header {
+  display: flex;
+  align-items: center;
+  border-bottom: 1px solid var(--color-darkergrey);
+  box-shadow: 0px 2px 4px rgba(0,0,0,0.4);
+
+  position: fixed;
+  z-index: 5;
+  /* background-color: #FFF8E3; */
+  max-width: inherit;
+  margin: 0 auto;
+  left: 0;
+  right: 0;
+}
+
+.header-tablet {
+  display: none;
+}
+
+.header-mobile {
+  display: none;
+}
+
+@media only screen and (max-width: 960px) {
+  .header-desktop {
+    display: none;
+  }
+  .header-tablet {
+    display: flex;
+  }
+}
+
+@media only screen and (max-width: 700px) {
+  .header-desktop {
+    display: none;
+  }
+  .header-mobile {
+    display: flex;
+  }
+}
+
+header h1 {
+  font-family: 'League Script', cursive;
+  padding: 0.8rem 0.8rem 0.8rem 2.5rem; /* Top & btm padding provided only to account for funky text style. */
+  font-size: 4rem;
+  white-space: nowrap; /* Prevent text wrap. */
+}
+
+header nav {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  width: 100%;
+  padding: 0 1.5rem;
+}
+
+header .btn {
+  background-color: #FFF8E3;
+  margin: 0 0.5rem;
+  padding: 0.5rem;
+  border: solid 1px #B64926;
+  border-radius: 0.5rem;
+  box-shadow: 0px 2px 4px darkgrey;
+
+  transition: all 0.4s ease-in;
+}
+
+header .btn:hover {
+  background-color: #FFB03B;
+}
+
+header .facebook {
+  background-color: rgba(59, 89, 152, 0.2)
+}
+
+header .facebook:hover {
+  background-color: rgba(59, 89, 152, 0.5)
+}
+
+header .instagram {
+  background-color: rgba(233, 89, 80, 0.2)
+}
+
+header .instagram:hover {
+  background-color: rgba(233, 89, 80, 0.5)
+}
+
+/* Main Content */
+
+.main-content {
+  padding: 1rem;
+  padding-top: 7rem; /* To account for fixed header. */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.main-content .image, .video {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  max-width: 28rem;
+  overflow: hidden;
+}
+
+.image img, video {
+  width: 95%;
+  border: 3px solid white;
+  box-shadow: 0px 2px 4px darkgrey;
+}
+
+@media only screen and (max-width: 960px) {
+  .video { display: none; } /* Hide video on tablets and mobiles. */
+}
+
+.image p, .video p {
+  padding: 1rem;
+  padding-bottom: 1.5rem;
+  font-style: italic;
+  text-align: center;
+}
+
+/* Footer */
+
+footer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 3rem;
+  font-size: 0.8rem;
+
+  border-top: 2px solid #782800;
+  box-shadow: 0px -2px 4px darkgrey;
+}
